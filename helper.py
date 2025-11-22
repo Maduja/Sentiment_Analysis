@@ -39,7 +39,7 @@ def preprocessing(text):
         )
     )
     data["tweet"] = data["tweet"].apply(remove_punctuations)
-    data["tweet"] = data["tweet"].str.replace("\d+", "", regex=True)
+    data["tweet"] = data["tweet"].str.replace(r"\d+", "", regex=True)
     data["tweet"] = data["tweet"].apply(
         lambda x: " ".join(x for x in x.split() if x not in sw)
     )
